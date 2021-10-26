@@ -1,0 +1,33 @@
+const chalk = require('chalk');
+const discord = require('discord.js');
+
+const client = new discord.Client({
+    intents: 581
+})
+
+client.commands = new discord.Collection();
+client.slashCommands = new discord.Collection();
+client.config = require('./config.json');
+
+['event_handler', "commands_handler"].forEach((file) => {
+    require(`./handlers/${file}`)(client)
+});
+
+const mongoose = require('mongoose')
+mongoose.connect(`${client.config.mongodb}`)
+.then(function(m) {
+    console.log(`${chalk.blueBright("[Mongoose Connection]")} ReadyState: ${m.connection.readyState}`)
+
+}).catch((e) => console.error(chalk.redBright(e)))
+
+client.on('error', error => {
+    console.error(`${chalk.redBright('[Client Error]')} ${error.message}`)
+})
+
+process.on('unhandledRejection', error => {
+    console.error(`${chalk.redBright('[Project Error]')} ${error.message}`)
+    console.error(`${chalk.redBright('[Project Error]')} Status: ${error.status}`)
+
+})
+
+client.login(client.config.token)

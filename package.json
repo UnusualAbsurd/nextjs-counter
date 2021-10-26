@@ -1,0 +1,20 @@
+{
+  "name": "adv",
+  "version": "1.0.0",
+  "description": "ADV is an advanced discord bot.",
+  "main": "adv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^13.2.0",
+    "fs": "^0.0.1-security",
+    "glob": "^7.2.0",
+    "mongoose": "^6.0.12",
+    "ms": "^2.1.3"
+  }
+}
+
