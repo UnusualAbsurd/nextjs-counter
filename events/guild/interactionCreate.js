@@ -23,9 +23,9 @@ module.exports = async (client, interaction) => {
 
         if (command) {
 
-            if (command?.permissions && command?.permissions?.length) {
+            if (command?.userPermissions && command?.userPermissions?.length) {
                 const perm = [];
-                for (const permission of command.permissions) {
+                for (const permission of command.userPermissions) {
                     perm.push(permission)
                 }
                 if (!interaction.member.permissions.has(perm)) return interaction.reply({ ephemeral: true, content: "Missing Permission: `" + `${perm?.join(", ")}` + '`' });

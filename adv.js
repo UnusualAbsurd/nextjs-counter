@@ -22,11 +22,12 @@ mongoose.connect(`${client.config.mongodb}`)
 
 client.on('error', error => {
     console.error(`${chalk.redBright('[Client Error]')} ${error.message}`)
+
 })
 
 process.on('unhandledRejection', error => {
     console.error(`${chalk.redBright('[Project Error]')} ${error.message}`)
-    console.error(`${chalk.redBright('[Project Error]')} Status: ${error.status}`)
+    console.error(`${chalk.redBright('[Project Error]')} Stack: ${error.stack}`)
 
 })
 

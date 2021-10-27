@@ -14,13 +14,20 @@ module.exports = {
      */
     async execute(client, message, args, errorMsg) {
 
-        let user = message.mentions.members.first() || (await message.guild.members.fetch(`${args[0]}`).catch(() => {}));
-        if(!user) return errorMsg(`Couldn't find user \`${args[0] || "null"}\``);
+        let user = message.mentions.members.first() || (await message.guild.members.fetch(`${args[2]}`).catch(() => {}));
+        if(!user) return errorMsg(`Couldn't find user \`${args[2] || "null"}\``);
 
         if(message.member.roles.highest.position <= user.roles.highest.position) return errorMsg("You cannot ban users with higher role than you!");
         if(!user.bannable) return errorMsg("Couldn't ban that member.");
 
-        const reason = args.slice(1).join(" ") || "No Reason Provided"
+        const reason = args.slice(3).join(" ") || "No Reason Provided"
+
+        user.send({
+            embeds: [new MessageEmbed().setColor("RED")
+          .setTimestamp()
+          .setDescription(`You have been banned from **${message.guild.name}**`)
+         ]
+        }).catch(() => {})
 
         message.channel.send({
             embeds: [new 
@@ -40,7 +47,7 @@ module.exports = {
           `**Action:** [Ban](${message.url})`,
           `**Reason:** ${reason}`,
           ` `,
-          `Date: <t:${Math.floor(Date.now() / 1000)}:D>`
+          `Date: <t:${Math.floor(Date.now() / 1002)}:D>`
         ].join("\n"))
         ).catch(() => {})
 

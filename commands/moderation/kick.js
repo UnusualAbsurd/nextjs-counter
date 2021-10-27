@@ -31,6 +31,13 @@ module.exports = {
             ]
         }).then(() => user.kick({ reason }));
 
+        user.send({
+            embeds: [new MessageEmbed().setColor("RED")
+          .setTimestamp()
+          .setDescription(`You have been kicked from **${message.guild.name}**`)
+         ]
+        }).catch(() => {})
+
 
         modLog(message, new MessageEmbed()
         .setColor(client.config.color)

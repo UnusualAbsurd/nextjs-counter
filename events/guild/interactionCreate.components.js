@@ -140,9 +140,9 @@ module.exports = async (client, interaction) => {
                 content: "Missing Permission `MANAGE_ROLES`"
             })
 
+            if(!data) return interaction.reply({ ephemeral: true, content: `Warn ID: \`${text}\` does not exist.` });
             const user = await client.users.fetch(`${data.user}`)
 
-            if(!data) return interaction.reply({ ephemeral: true, content: `Warn ID: \`${text}\` does not exist.` });
             if(data) {
                 data.delete(async function() {
                     interaction.reply({
@@ -154,7 +154,7 @@ module.exports = async (client, interaction) => {
                         ],
                         ephemeral: true
                     })
-    
+
                     await modLog(interaction, new MessageEmbed()
                     .setAuthor(`${interaction.user.tag} (${interaction.user.id})`, interaction.user.displayAvatarURL({dynamic: true}))
                     .setDescription([
