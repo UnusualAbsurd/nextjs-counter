@@ -21,8 +21,9 @@ module.exports = {
         if(!ch.isText()) return errorMsg(`${ch} must be a \`TEXT_CHANNEL\``);
 
         const data = await db.findOne({ guild: message.guildId });
-        if(!data) newGuild(message.guildId);
+        if(!data) await newGuild(message.guildId);
 
+        if(data?.modlog === ch.id) return errorMsg(`<#${ch.id}> is already your modlog!`)
         data.modlog = ch.id;
         data.save(function() {
             message.channel.send({

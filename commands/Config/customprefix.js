@@ -16,7 +16,7 @@ module.exports = {
         if(!args.length) return errorMsg("Missing `New Prefix`");
 
         const data = await db.findOne({guild: message.guildId});
-        if(!data) newGuild(message.guildId);
+        if(!data) await newGuild(message.guildId);
 
         data.prefix = args[0];
         data.save(function() {
