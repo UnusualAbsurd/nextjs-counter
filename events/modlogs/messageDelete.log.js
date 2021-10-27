@@ -7,6 +7,7 @@ const { modLog } = require('../../functions/guild/modlog')
 * @param {Discord.Message} message
 */
 module.exports = async(client, message) => {
+    if(message.author.bot) return;
     const embed = new Discord.MessageEmbed()
     .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL({dynamic: true}), message.author.displayAvatarURL({dynamic: true}))
     .setColor("ORANGE")

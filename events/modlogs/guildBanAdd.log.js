@@ -20,7 +20,7 @@ module.exports = async(client, ban) => {
     .setTimestamp()
     .setAuthor(`${ban.user.tag} (${ban.user.id})`, ban.user.displayAvatarURL({dynamic: true}))
     .setDescription(`**${ban.user.tag} has been banned by <@!${autho.id}>**\n\nBan Date: <t:${Math.floor(log.createdTimestamp)}:D>`)
-    .addField(`Reason`, `${ban.reason?.toString() || "No Reason Given"}`)
+    .addField(`Reason`, `${ban.reason ?? "No Reason Given"}`)
     .setFooter(ban.user.id)
 
     await modLog(ban, embed)
