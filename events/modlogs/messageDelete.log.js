@@ -8,6 +8,10 @@ const { modLog } = require('../../functions/guild/modlog')
 */
 module.exports = async(client, message) => {
     if(message.author.bot) return;
+
+    const log = (await message.guild.fetchAuditLogs()).entries.filter(a => a.action === "MESSAGE_DELETE").first()
+
+
     const embed = new Discord.MessageEmbed()
     .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.displayAvatarURL({dynamic: true}), message.author.displayAvatarURL({dynamic: true}))
     .setColor("ORANGE")
@@ -17,7 +21,7 @@ module.exports = async(client, message) => {
     ].join("\n"))
     
     const msg = [
-      `**Message by <@!${message.author.id}> was deleted in ${message.channel}**`
+      `**A message by <@!${message.author.id}> was deleted by <@!${log.executor.id}> in ${message.channel}**`
     ]
 
     if(message.content) {
@@ -25,7 +29,7 @@ module.exports = async(client, message) => {
     }
     
 
-    if(message.attachments) {
+    if(message.attachments && message.attachments.first()) {
         msg.push(`${message.attachments.first().attachment.toString()}` || "")
         try{
         embed.setImage(message.attachments.first().proxyURL)
