@@ -1,5 +1,6 @@
 # Adv Discord Bot
 ## Adv Discord Bot is a bot that will launch somewhere in december.
+### [Join discord server for early sneak peeks and beta access](https://discord.gg/PjRzGTZYfe)
 
 # How to use? 📚
 ```
