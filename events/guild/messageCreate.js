@@ -1,6 +1,6 @@
 const discord = require('discord.js');
 const guildData = require('../../models/Guilds')
-const botData = require('../../models/Bot')
+
 
 /**
  * 
@@ -28,20 +28,14 @@ module.exports = async(client, message) => {
     .split(/ +/g)
 
     const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(a => a.aliases?.includes(cmd?.toLowerCase()));
-
-    const blData = await botData.findOne({client: client.user.id});
-   
-    
+       
     function errorMsg(msg) {
       return  message.channel.send({ embeds: [new discord.MessageEmbed().setColor("RED").setDescription(`<:RedTick:899904214740922378> ${msg}`).setFooter(`${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))] })
     }
    
     if(!command) return;
     if(command) {
-        if(blData) {
-            if(blData.blacklistedUsers?.includes(message.author.id)) return errorMsg("You are blacklisted from running bot commands by adv's admin team.")
-        }
-
+    
         if(command?.permissions && command?.permissions?.length) {
             const perms = [];
             for(const permission of command.permissions) {
