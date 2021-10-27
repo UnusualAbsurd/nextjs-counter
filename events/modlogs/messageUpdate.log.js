@@ -8,9 +8,9 @@ const { modLog } = require('../../functions/guild/modlog');
 * @param {Discord.Message} newmsg
 */
 module.exports = async(client, oldmsg, newmsg) => {
-    if(!oldmsg.content || !newmsg.content) return;
+    if(!oldmsg.content || !newmsg.content) return;  
     if(oldmsg.content === newmsg.content || oldmsg.content == newmsg.content) return;
-    
+
     const embed = new Discord.MessageEmbed()
     .setColor("NAVY")
     .setAuthor(newmsg.author.tag, newmsg.author.displayAvatarURL({dynamic: true}))

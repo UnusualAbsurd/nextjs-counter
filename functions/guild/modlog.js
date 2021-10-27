@@ -1,7 +1,8 @@
 const db = require('../../models/Guilds')
 
 async function modLog(message, embed, row) {
-  const guild = message.guildId
+  console.log(message.guild.id)
+  const guild = message.guild.id
    const data = await db.findOne({guild});
    if(!data) return;
    const channel = message.guild.channels.cache.get(data.modlog);
