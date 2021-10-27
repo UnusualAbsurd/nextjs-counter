@@ -34,5 +34,5 @@ node .
 ```
 
 # Made by: UnusualAbsurd ᵈᵉᵛ#2908
-# License
+# [License](https://github.com/UnusualAbsurd/adv-discord-bot/blob/master/LICENSE)
 # Epic 😎
