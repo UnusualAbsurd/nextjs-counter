@@ -43,7 +43,7 @@ module.exports = {
             user.send({
                 embeds: [new MessageEmbed().setAuthor(`${client.user.tag}`, client.user.displayAvatarURL()).setColor(client.config.color).setDescription("You have been warned in " + `**${message.guild.name}**`).setTimestamp().setFooter(`${data._id}-${message.guildId}`)],
                 components: [new MessageActionRow().addComponents([new MessageButton().setLabel("View Reason").setStyle("SECONDARY").setCustomId("viewreason")])]
-            })
+            }).catch(() => {})
         })
 
         await modLog(message, new MessageEmbed()
