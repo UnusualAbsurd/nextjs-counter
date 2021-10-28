@@ -41,7 +41,8 @@ module.exports = async (client, interaction) => {
             const filter = m => m.author.id == interaction.user.id
             var collector = interaction.channel.createMessageCollector({ filter, time: 30 * 1000 });
             interaction.reply({ ephemeral: true, content: "You have **30 seconds** to search the commands. Type the command name you would like to search.\nType `end` if you would like to stop." });
-    
+            
+
             collector.on('collect', (m) => {
                 const command = client.commands.get(m.content.toLowerCase()) || client.commands.find(a => a.aliases?.includes(m.content.toLowerCase()));
                 if(m.content?.toLowerCase() === 'end') {
