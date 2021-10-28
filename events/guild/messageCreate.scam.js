@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const scamLinks = require('../../data/scamlinks.json')
+const fetch = require('node-fetch').default;
 
 /**
 * @param {Discord.Client} client
@@ -7,9 +7,10 @@ const scamLinks = require('../../data/scamlinks.json')
 */
 module.exports = async(client, message) => {
 
-    if(message.author.bot) return;
-
-    scamLinks.forEach(async(link) => {
+    await fetch('https://raw.githubusercontent.com/UnusualAbsurd/adv-discord-bot/master/data/scamlinks.json')
+    .then(response => response.json())
+    .then(scamLinks => {
+        scamLinks.forEach(async link => {
         if(message.content?.toLowerCase()?.includes(link?.toLowerCase())) {
             if(message.deletable) message.delete();
             const msg = await message.channel.send({
@@ -17,6 +18,7 @@ module.exports = async(client, message) => {
             })
             setTimeout(() => msg.delete().catch(() => {}), 3000)
         } else return;
+       })
     })
 
 }
