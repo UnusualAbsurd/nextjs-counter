@@ -7,7 +7,7 @@ const fetch = require('node-fetch').default;
 */
 module.exports = async(client, message) => {
 
-    await fetch('https://raw.githubusercontent.com/UnusualAbsurd/adv-discord-bot/master/data/scamlinks.json')
+    await fetch('https://raw.githubusercontent.com/UnusualAbsurd/DiscordScamLinksData/main/scamlinks.json')
     .then(response => response.json())
     .then(scamLinks => {
         scamLinks.forEach(async link => {
