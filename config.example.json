@@ -6,5 +6,10 @@
         "admin": "https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=8&scope=bot%20applications.commands",
         "default": "https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=535750376663&scope=bot%20applications.commands"
     },
-    "mongodb": "MONGODB_SRV"
+    "mongodb": "MONGODB_SRV",
+    "api": {
+        "cat": "THECATAPI.COM API KEY",
+        "cx": "GOOGLE CX KEY",
+        "google": "GOOGLE JSON API KEY"
+    }
 }

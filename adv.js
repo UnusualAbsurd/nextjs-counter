@@ -29,4 +29,4 @@ process.on('unhandledRejection', error => {
     console.error(`${chalk.redBright('[Project Error]')} Stack: ${error.stack}`)
 })
 
-client.login(client.config.token)
+client.login(client.config.token).catch((e) => console.error(`${chalk.redBright("[Client Login Error]")} ${e.message}`))
