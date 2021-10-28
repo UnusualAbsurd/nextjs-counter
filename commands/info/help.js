@@ -40,6 +40,13 @@ module.exports = {
             emoji: "<:7259_gil_salute:902453758947102791>"
         }
 
+        let fun_option = {
+            label: "Fun Commands",
+            description: "Click to view fun commands",
+            value: 'fun',
+            emoji: "<:6400_gil_ree:902453758850650182>"
+        }
+
         const placeholder = new MessageActionRow()
         .addComponents([
             new MessageSelectMenu()
@@ -50,6 +57,7 @@ module.exports = {
               mod_option,
               config_data,
               misc_option,
+              fun_option,
               info_option
             ])
         ])
@@ -81,10 +89,15 @@ module.exports = {
         .setColor(client.config.color)
         .setAuthor(`${client.user.username}'s Server Settings Commands`, client.user.displayAvatarURL())
 
+        const fun_embed = new MessageEmbed()
+        .setColor(client.config.color)
+        .setAuthor(`${client.user.username}'s Fun Commands`, client.user.displayAvatarURL())
+
         var misc_array = [];
         var info_array = [];
         var mod_array = [];
         var config_array = [];
+        var fun_array = [];
         
 
         client.commands.forEach((cmd) => {
@@ -101,6 +114,9 @@ module.exports = {
                 case 'config':
                     config_array.push(cmd);
                 break
+                case 'fun':
+                    fun_array.push(cmd);
+                break
             }
         })
 
@@ -108,6 +124,7 @@ module.exports = {
         info_array.forEach((cmd) => info_embed.addField(`${prefix}${cmd.name}`, `<:Reply:887332969033912380> ${cmd.description || "No Description"}`))
         mod_array.forEach((cmd) => mod_embed.addField(`${prefix}${cmd.name}`, `<:Reply:887332969033912380> ${cmd.description || "No Description"}`))
         config_array.forEach((cmd) => config_embed.addField(`${prefix}${cmd.name}`, `<:Reply:887332969033912380> ${cmd.description || "No Description"}`))
+        fun_array.forEach((cmd) => fun_embed.addField(`${prefix}${cmd.name}`, `<:Reply:887332969033912380> ${cmd.description || "No Description"}`))
 
 
 
@@ -125,6 +142,10 @@ module.exports = {
                 case 'config':
                     interaction.reply({ ephemeral: true, embeds: [config_embed]})
                 break
+                case 'fun':
+                    interaction.reply({ ephemeral: true, embeds: [fun_embed]});
+                break
+
             }
         }
 
