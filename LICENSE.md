@@ -1,38 +1,8 @@
-<h1 align="center">Copyright and License</h1>
-<p align="center">Terms Used</p>
+# Copyright 2021 Jaden
 
-- Adv ("Owner",  "adv discod bot", "Us", "We", "Our")
-- Content ("Bot", "bot", "code", "codes", "assets", "source", "sources")
-- User ("You", "User", "they", "them", "their")
----
-<h2 align="center">Introduction</h2>
-<p align="center">ADV reserves the right to all content found in this repository. The content is intellectual property and will remain as such indefinitely. If any one person decides to use, in whole or in part, the code, they agree to be bound by the rules stated herein by the author.</p>
 
----
-+ ADV's Discord: [Discord Link](https://discord.gg/pjrzgtzyfe)
-+ Developer's Contact: unusualabsurd@yahoo.com
----
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-### Allowed
-#### Users are permitted...
-- ... to study the code and how the code is built for educational purposes.
-- ... to reverse engineer the code in any way they want as long as they do not distribute the fragmented code.
-- ... to take snippets of the code to use as long as they give due credit.
----
-### Disallowed
-#### Users are forbidden...
-- ... from distributing a lightly edited version of the base code without credit or prior permission from the developer.
-- ... from copying large amounts of code from the source and using it without discussing it with us beforehand.
----
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-<h2 align="center">ADV reserve the right to request take down of any content that is found to be in violation of these terms.
-</h2>
-
-### NO OTHER WEBSITE OR DEVELOPER MAY USE THIS CODE  WITHOUT EXPLICIT PERMISSION FROM THE AUTHOR(s)
-
----
-**These terms apply to all files in this repository.**
----
-Copyright © 2021 - ADV
-
-### Credits to [dmod.gg](https://dmod.gg/) for some of the license content.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

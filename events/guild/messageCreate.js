@@ -42,8 +42,8 @@ module.exports = async(client, message) => {
                 perms.push(permission)
             }
             if(!message.member.permissions.has(perms)) return errorMsg(`Missing Permissions: \`${perms?.join(", ")}\``)
-            else await command.execute(client, message, args, errorMsg)
-        }  else await command.execute(client, message, args, errorMsg)
+            else await command.execute(client, message, args, errorMsg, prefix)
+        }  else await command.execute(client, message, args, errorMsg, prefix)
 
 
 

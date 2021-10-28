@@ -10,10 +10,8 @@ module.exports = {
      * @param {Message} message 
      * @param {String[]} args 
      */
-    async execute(client, message, args) {
+    async execute(client, message, args, errorMsg, prefix) {
         
-        const prefix = client.config.prefix
-
         let misc_option = {
             label: "Misc Commands",
             description: "Click to view misc commands",
