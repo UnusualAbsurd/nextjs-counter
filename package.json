@@ -2,7 +2,7 @@
   "name": "adv",
   "version": "1.0.0",
   "description": "ADV is an advanced discord bot.",
-  "main": "web/server.js",
+  "main": "adv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

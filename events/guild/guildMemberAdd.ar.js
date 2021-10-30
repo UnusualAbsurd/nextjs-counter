@@ -8,8 +8,6 @@ const chalk = require('chalk')
 */
 module.exports = async(client, user) => {
 
-    console.log('user')
-
     const data = await db.find({ guild: user.guild.id });
     if(!data?.length) return;
 
