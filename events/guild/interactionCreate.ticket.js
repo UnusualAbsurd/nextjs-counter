@@ -16,7 +16,7 @@ module.exports = async(client, interaction) => {
           })
 
           interaction.reply({ content: "Successfullly created your ticket - <#" + ch.id + ">", ephemeral: true })
-          ch.send({ embeds: [new MessageEmbed().setColor("GREEN").setTimestamp().setDescription(`<@!${interaction.user.id}>, thank you for creating a ticket! The support theme will assits you now! \:)`)] });
+          ch.send({ embeds: [new MessageEmbed().setColor("GREEN").setTimestamp().setDescription(`<@!${interaction.user.id}>, thank you for creating a ticket! The support theme will assits you now! \:)`)] }).catch(() => {})  ;
         }
     }
 }

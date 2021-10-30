@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const discord = require('discord.js');
 
 const client = new discord.Client({
-    intents: 581
+    intents: 14023
 })
 
 client.commands = new discord.Collection();

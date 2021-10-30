@@ -1,6 +1,7 @@
 const { Client, CommandInteraction, MessageEmbed } = require('discord.js');
 const db = require('../../models/AntiScam')
 
+
 module.exports = {
     name: 'antiscam',
     description: 'Make the bot antiscam links, that are common in discord',
@@ -64,6 +65,8 @@ module.exports = {
             }
 
         }
+
+    
 
 
 

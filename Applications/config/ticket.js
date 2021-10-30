@@ -14,12 +14,25 @@ module.exports = {
                 {name: "title", description: "The embed title of the embed panel", type: "STRING", required: true },
                 {name: "description", description: "The embed description of the embed panel", type: "STRING", required: true }
             ]
+        }, // Panel End
+        {
+            name: 'role',
+            type: "SUB_COMMAND_GROUP",
+            description:"The support team role that can view the ticket!",
+            options: [
+               {
+                 name: 'add',
+                 description: "Add a role as the server support ticket team!",
+                 type: "SUB_COMMAND",
+                 options: [{ name: "role", description: "The role you want to add", type: "ROLE", required: true }]
+               }, // Command Group Add 
+            ],
         }
     ],
     /** 
      * @param {Client} client 
      * @param {CommandInteraction} interaction 
-     * @param {String[]} args 
+     * @param {String[]} args       
      */
     async execute(client, interaction, args) {
 
@@ -28,6 +41,8 @@ module.exports = {
         const channel = interaction.options.getChannel('channel');
 
         const [subcommand] = args;
+
+        console.log(args)
 
         if(subcommand === 'panel') {
            const msg = await channel.send({
@@ -47,6 +62,8 @@ module.exports = {
            })
         }
 
+
+    
 
     }
 }
