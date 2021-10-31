@@ -78,7 +78,7 @@ module.exports = {
     ]);
 
     const basic = new MessageEmbed()
-      .setColor(process.env.color)
+      .setColor(client.config.color)
       .setAuthor(
         `${client.user.username}'s Help Panel`,
         client.user.displayAvatarURL()
@@ -102,35 +102,35 @@ module.exports = {
     message.channel.send({ embeds: [basic], components: [placeholder, row] });
 
     const misc_embed = new MessageEmbed()
-      .setColor(process.env.color)
+      .setColor(client.config.color)
       .setAuthor(
         `${client.user.username}'s Misc Commands`,
         client.user.displayAvatarURL()
       );
 
     const info_embed = new MessageEmbed()
-      .setColor(process.env.color)
+      .setColor(client.config.color)
       .setAuthor(
         `${client.user.username}'s Info Commands`,
         client.user.displayAvatarURL()
       );
 
     const mod_embed = new MessageEmbed()
-      .setColor(process.env.color)
+      .setColor(client.config.color)
       .setAuthor(
         `${client.user.username}'s Moderation Commands`,
         client.user.displayAvatarURL()
       );
 
     const config_embed = new MessageEmbed()
-      .setColor(process.env.color)
+      .setColor(client.config.color)
       .setAuthor(
         `${client.user.username}'s Server Settings Commands`,
         client.user.displayAvatarURL()
       );
 
     const fun_embed = new MessageEmbed()
-      .setColor(process.env.color)
+      .setColor(client.config.color)
       .setAuthor(
         `${client.user.username}'s Fun Commands`,
         client.user.displayAvatarURL()

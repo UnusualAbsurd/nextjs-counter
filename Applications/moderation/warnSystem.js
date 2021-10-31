@@ -82,7 +82,7 @@ module.exports = {
         interaction.reply({
           embeds: [
             new MessageEmbed()
-              .setColor(process.env.color)
+              .setColor(client.config.color)
               .setDescription(`Successfully warned **${user.user.tag}**`)
               .setTimestamp(),
           ],
@@ -93,7 +93,7 @@ module.exports = {
             embeds: [
               new MessageEmbed()
                 .setAuthor(`${client.user.tag}`, client.user.displayAvatarURL())
-                .setColor(process.env.color)
+                .setColor(client.config.color)
                 .setDescription(
                   "You have been warned in " + `**${interaction.guild.name}**`
                 )
@@ -130,7 +130,7 @@ module.exports = {
             ].join("\n")
           )
           .setFooter(`${data._id}`)
-          .setColor(process.env.color),
+          .setColor(client.config.color),
         new MessageActionRow().addComponents([
           new MessageButton()
             .setLabel("Delete Warn")
@@ -166,7 +166,7 @@ module.exports = {
             embeds: [
               new MessageEmbed()
                 .setDescription(`Deleted **${user.tag}** warning \`${warnID}\``)
-                .setColor(process.env.color)
+                .setColor(client.config.color)
                 .setTimestamp(),
             ],
           });
@@ -188,7 +188,7 @@ module.exports = {
                   `Date: <t:${Math.floor(Date.now() / 1000)}:D>`,
                 ].join("\n")
               )
-              .setColor(process.env.color)
+              .setColor(client.config.color)
           );
         });
       }

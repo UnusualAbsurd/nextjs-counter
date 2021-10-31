@@ -27,7 +27,7 @@ module.exports = {
           message.channel.send({
             embeds: [
               new MessageEmbed()
-                .setColor(process.env.color)
+                .setColor(client.config.color)
                 .setDescription(
                   "Successfully enabled anti-scam links in " +
                     `**${message.guild.name}**`
@@ -45,7 +45,7 @@ module.exports = {
             message.channel.send({
               embeds: [
                 new MessageEmbed()
-                  .setColor(process.env.color)
+                  .setColor(client.config.color)
                   .setDescription(
                     "Successfully enabled anti-scam links in " +
                       `**${message.guild.name}**`
@@ -66,7 +66,7 @@ module.exports = {
           message.channel.send({
             embeds: [
               new MessageEmbed()
-                .setColor(process.env.color)
+                .setColor(client.config.color)
                 .setDescription(
                   "Successfully disabled anti-scam links in " +
                     `**${message.guild.name}**`
@@ -84,7 +84,7 @@ module.exports = {
             message.channel.send({
               embeds: [
                 new MessageEmbed()
-                  .setColor(process.env.color)
+                  .setColor(client.config.color)
                   .setDescription(
                     "Successfully disabled anti-scam links in " +
                       `**${message.guild.name}**`

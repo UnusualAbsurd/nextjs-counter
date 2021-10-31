@@ -52,7 +52,7 @@ module.exports = {
       .reply({
         embeds: [
           new MessageEmbed()
-            .setColor(process.env.color)
+            .setColor(client.config.color)
             .setDescription(`Successfully banned **${user.user.tag}**`)
             .setTimestamp(),
         ],
@@ -62,7 +62,7 @@ module.exports = {
     modLog(
       interaction,
       new MessageEmbed()
-        .setColor(process.env.color)
+        .setColor(client.config.color)
         .setAuthor(
           `${interaction.user.tag} (${interaction.user.id})`,
           interaction.user.displayAvatarURL({ dynamic: true })

@@ -27,7 +27,7 @@ module.exports = {
               `Successfully changed **${message.guild.name}** prefix into \`${args[0]}\``
             )
             .setTimestamp()
-            .setColor(process.env.color),
+            .setColor(client.config.color),
         ],
       });
     });

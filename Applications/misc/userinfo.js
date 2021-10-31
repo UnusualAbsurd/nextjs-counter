@@ -55,7 +55,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setColor(
-        user.user.accentColor || user.roles.highest.color || process.env.color
+        user.user.accentColor || user.roles.highest.color || client.config.color
       )
       .setAuthor(user.user.tag, user.displayAvatarURL({ dynamic: true }))
       .setThumbnail(user.displayAvatarURL({ dynamic: true }))

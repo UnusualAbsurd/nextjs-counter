@@ -34,7 +34,7 @@ module.exports = {
               `Successfully changed **${interaction.guild.name}** prefix into \`${prefix[0]}\``
             )
             .setTimestamp()
-            .setColor(process.env.color),
+            .setColor(client.config.color),
         ],
       });
     });

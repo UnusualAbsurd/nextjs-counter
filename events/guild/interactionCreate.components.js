@@ -34,7 +34,7 @@ module.exports = async (client, interaction) => {
           embeds: [
             new Discord.MessageEmbed()
               .setTitle(`Roles [${roles.length}]`)
-              .setColor(user.roles.highest.color || process.env.color)
+              .setColor(user.roles.highest.color || client.config.color)
               .setDescription(`${roles?.join(" ") || "No Custom Server Roles"}`)
               .setTimestamp()
               .setAuthor(
@@ -79,7 +79,7 @@ module.exports = async (client, interaction) => {
             m.reply({
               embeds: [
                 new MessageEmbed()
-                  .setColor(process.env.color)
+                  .setColor(client.config.color)
                   .setTitle(`${command.name}`)
                   .setDescription(`${command.description || "No Description"}`)
                   .addField(
@@ -127,7 +127,7 @@ module.exports = async (client, interaction) => {
             m.reply({
               embeds: [
                 new MessageEmbed()
-                  .setColor(process.env.color)
+                  .setColor(client.config.color)
                   .setTitle(`/${command.name}`)
                   .setDescription(`${command.description || "No Description"}`),
               ],
@@ -144,7 +144,9 @@ module.exports = async (client, interaction) => {
 
       const embed = new MessageEmbed()
         .setColor(
-          user.user.accentColor || user.roles.highest.color || process.env.color
+          user.user.accentColor ||
+            user.roles.highest.color ||
+            client.config.color
         )
         .setAuthor(user.user.tag, user.displayAvatarURL({ dynamic: true }))
         .setThumbnail(user.displayAvatarURL({ dynamic: true }))
@@ -193,7 +195,7 @@ module.exports = async (client, interaction) => {
         interaction.reply({
           embeds: [
             new MessageEmbed()
-              .setColor(process.env.color)
+              .setColor(client.config.color)
               .setTimestamp()
               .setAuthor(
                 `Warned By: ${moderator.tag} (${moderator.id})`,
@@ -235,7 +237,7 @@ module.exports = async (client, interaction) => {
             embeds: [
               new MessageEmbed()
                 .setDescription(`Deleted **${user.tag}** warning \`${text}\``)
-                .setColor(process.env.color)
+                .setColor(client.config.color)
                 .setTimestamp(),
             ],
             ephemeral: true,
@@ -258,7 +260,7 @@ module.exports = async (client, interaction) => {
                   `Date: <t:${Math.floor(Date.now() / 1000)}:D>`,
                 ].join("\n")
               )
-              .setColor(process.env.color)
+              .setColor(client.config.color)
           );
         });
       }

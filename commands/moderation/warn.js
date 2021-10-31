@@ -43,7 +43,7 @@ module.exports = {
       message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor(process.env.color)
+            .setColor(client.config.color)
             .setDescription(`Successfully warned **${user.user.tag}**`)
             .setTimestamp(),
         ],
@@ -54,7 +54,7 @@ module.exports = {
           embeds: [
             new MessageEmbed()
               .setAuthor(`${client.user.tag}`, client.user.displayAvatarURL())
-              .setColor(process.env.color)
+              .setColor(client.config.color)
               .setDescription(
                 "You have been warned in " + `**${message.guild.name}**`
               )
@@ -91,7 +91,7 @@ module.exports = {
           ].join("\n")
         )
         .setFooter(`${data._id}`)
-        .setColor(process.env.color),
+        .setColor(client.config.color),
       new MessageActionRow().addComponents([
         new MessageButton()
           .setLabel("Delete Warn")

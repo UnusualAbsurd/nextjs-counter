@@ -33,7 +33,7 @@ module.exports = {
           embeds: [
             new MessageEmbed()
               .setDescription(`Deleted **${user.tag}** warning \`${args[0]}\``)
-              .setColor(process.env.color)
+              .setColor(client.config.color)
               .setTimestamp(),
           ],
         });
@@ -55,7 +55,7 @@ module.exports = {
                 `Date: <t:${Math.floor(Date.now() / 1000)}:D>`,
               ].join("\n")
             )
-            .setColor(process.env.color)
+            .setColor(client.config.color)
         );
       });
     }

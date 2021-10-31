@@ -45,7 +45,7 @@ module.exports = {
             `${user.user.tag} Warnings`,
             user.displayAvatarURL({ dynamic: true })
           )
-          .setColor(process.env.color)
+          .setColor(client.config.color)
           .setDescription(`${await warns}`)
           .setTimestamp(),
       ],

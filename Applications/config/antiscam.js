@@ -30,7 +30,7 @@ module.exports = {
           interaction.reply({
             embeds: [
               new MessageEmbed()
-                .setColor(process.env.color)
+                .setColor(client.config.color)
                 .setDescription(
                   "Successfully enabled anti-scam links in " +
                     `**${interaction.guild.name}**`
@@ -51,7 +51,7 @@ module.exports = {
             interaction.reply({
               embeds: [
                 new MessageEmbed()
-                  .setColor(process.env.color)
+                  .setColor(client.config.color)
                   .setDescription(
                     "Successfully enabled anti-scam links in " +
                       `**${interaction.guild.name}**`
@@ -73,7 +73,7 @@ module.exports = {
           interaction.reply({
             embeds: [
               new MessageEmbed()
-                .setColor(process.env.color)
+                .setColor(client.config.color)
                 .setDescription(
                   "Successfully disabled anti-scam links in " +
                     `**${interaction.guild.name}**`
@@ -94,7 +94,7 @@ module.exports = {
             interaction.reply({
               embeds: [
                 new MessageEmbed()
-                  .setColor(process.env.color)
+                  .setColor(client.config.color)
                   .setDescription(
                     "Successfully disabled anti-scam links in " +
                       `**${interaction.guild.name}**`

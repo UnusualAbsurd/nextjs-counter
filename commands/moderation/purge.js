@@ -33,7 +33,7 @@ module.exports = {
               `Successfully deleted **${parseInt(args[0])}** message(s)`
             )
             .setTimestamp()
-            .setColor(process.env.color),
+            .setColor(client.config.color),
         ],
       });
     }, 1000);
@@ -45,7 +45,7 @@ module.exports = {
           `${message.author.tag} (${message.author.id})`,
           message.author.displayAvatarURL({ dynamic: true })
         )
-        .setColor(process.env.color)
+        .setColor(client.config.color)
         .setDescription(
           [
             `**Action:** [Purge](${message.url})`,

@@ -27,7 +27,7 @@ module.exports = {
     ]);
 
     const embed = new MessageEmbed()
-      .setColor(process.env.color)
+      .setColor(client.config.color)
       .setTitle(guild.name)
       .setThumbnail(guild.iconURL({ dynamic: true }) || null)
       .addField(

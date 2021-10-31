@@ -15,7 +15,7 @@ module.exports = {
     message.channel.send({
       embeds: [
         new MessageEmbed()
-          .setColor(process.env.color)
+          .setColor(client.config.color)
           .setTimestamp()
           .setAuthor(client.user.username, client.user.displayAvatarURL())
           .addField(`Servers`, `${commas(client.guilds.cache.size)}`, true)

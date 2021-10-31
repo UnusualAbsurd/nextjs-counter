@@ -12,7 +12,7 @@ module.exports = async (client, guild) => {
       embeds: [
         new Discord.MessageEmbed()
           .setAuthor(client.user.username, client.user.displayAvatarURL())
-          .setColor(process.env.color)
+          .setColor(client.config.color)
           .setTimestamp()
           .setDescription(
             [

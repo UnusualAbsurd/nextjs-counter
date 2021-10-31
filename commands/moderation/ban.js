@@ -41,7 +41,7 @@ module.exports = {
       .send({
         embeds: [
           new MessageEmbed()
-            .setColor(process.env.color)
+            .setColor(client.config.color)
             .setDescription(`Successfully banned **${user.user.tag}**`)
             .setTimestamp(),
         ],
@@ -51,7 +51,7 @@ module.exports = {
     modLog(
       message,
       new MessageEmbed()
-        .setColor(process.env.color)
+        .setColor(client.config.color)
         .setAuthor(
           `${message.author.tag} (${message.author.id})`,
           message.author.displayAvatarURL({ dynamic: true })

@@ -35,7 +35,7 @@ module.exports = {
       interaction.reply({
         embeds: [
           new MessageEmbed()
-            .setColor(process.env.color)
+            .setColor(client.config.color)
             .setDescription(
               `Successfully set **${message.guild.name}** mod-logs as <#${ch.id}>`
             )
