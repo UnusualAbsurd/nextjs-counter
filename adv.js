@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 const discord = require('discord.js');
+require('dotenv').config();
 
 const client = new discord.Client({
     intents: 14023
@@ -15,7 +16,7 @@ client.config = require('./config.json');
 require('./web/server')(client)
 
 const mongoose = require('mongoose')
-mongoose.connect(`${client.config.mongodb}`)
+mongoose.connect(`${process.env.mongodb}`)
 .then(function(m) {
     console.log(`${chalk.blueBright("[Mongoose Connection]")} ReadyState: ${m.connection.readyState}`)
 
@@ -23,7 +24,6 @@ mongoose.connect(`${client.config.mongodb}`)
 
 client.on('error', error => {
     console.error(`${chalk.redBright('[Client Error]')} ${error.message}`)
-
 })
 
 process.on('unhandledRejection', error => {
@@ -31,4 +31,4 @@ process.on('unhandledRejection', error => {
     console.error(`${chalk.redBright('[Project Error]')} Stack: ${error.stack}`)
 })
 
-client.login(client.config.token).catch((e) => console.error(`${chalk.redBright("[Client Login Error]")} ${e.message}`))
+client.login(process.env.token).catch((e) => console.error(`${chalk.redBright("[Client Login Error]")} ${e.message}`))

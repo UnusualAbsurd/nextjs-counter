@@ -6,15 +6,9 @@
         "admin": "https://discord.com/api/oauth2/authorize?client_id=902393086980816927&permissions=8&scope=bot%20applications.commands",
         "default": "https://discord.com/api/oauth2/authorize?client_id=902393086980816927&permissions=535750376663&scope=bot%20applications.commands"
     },
-    "mongodb": "mongodb+srv://AdvAdmin:AdvAdmin06102007@advdb.0sh7j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     "bot": {
       "admin": [
           "746721583804055634"
       ]
-    },
-    "api": {
-        "cat": "9fb19d16-ab1a-4e84-a97c-2256709693bb",
-        "cx": "c069e58936f7a2cf0",
-        "google": "AIzaSyAU-DUQqPYl9l8Uu2vmIt7qrOehQfiBAYU"
     }
 }
