@@ -1,7 +1,4 @@
 {
-    "token": "OTAyMzkzMDg2OTgwODE2OTI3.YXdxDQ.Qr60JLCJWJmZ01wZ-37FH_bbH28",
-    "prefix": "-",
-    "color": "#2F3136",
     "invite": {
         "admin": "https://discord.com/api/oauth2/authorize?client_id=902393086980816927&permissions=8&scope=bot%20applications.commands",
         "default": "https://discord.com/api/oauth2/authorize?client_id=902393086980816927&permissions=535750376663&scope=bot%20applications.commands"
